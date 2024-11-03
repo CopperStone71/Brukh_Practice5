@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A3FE097-5ED4-4ECA-9F1B-F88F30CDB647}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Practice5</RootNamespace>
+    <AssemblyName>Practice5</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper.cs" />
+    <Compile Include="Models\Client.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Client_type.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Contract.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_registration.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee_type.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estimates.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Execution_status.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\prog_com.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prog_com.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\prog_com.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\prog_com.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>prog_com.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project_archive.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tax_report.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tech_spec.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Work_plan.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Work_plan_task.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Work_team.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Work_team_employee.cs">
+      <DependentUpon>prog_com.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="Models\prog_com.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>prog_com.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\prog_com.edmx.diagram">
+      <DependentUpon>prog_com.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HashPassword\HashPassword.csproj">
+      <Project>{61da6274-6426-42a9-8bdd-cb9b2796eb3e}</Project>
+      <Name>HashPassword</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\prog_com.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>prog_com.edmx</DependentUpon>
+      <LastGenOutput>prog_com.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\prog_com.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>prog_com.edmx</DependentUpon>
+      <LastGenOutput>prog_com.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
